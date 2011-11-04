@@ -1,3 +1,9 @@
+# revision 19883
+# category Package
+# catalog-ctan /macros/plain/contrib/pitex
+# catalog-date 2010-09-08 12:21:11 +0200
+# catalog-license lppl
+# catalog-version undef
 Name:		texlive-pitex
 Version:	20100908
 Release:	1
@@ -41,6 +47,7 @@ notice.
 %{_texmfdistdir}/tex/plain/pitex/pitex.tex
 %{_texmfdistdir}/tex/plain/pitex/sections.ptx
 %doc %{_texmfdistdir}/doc/plain/pitex/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ notice.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
