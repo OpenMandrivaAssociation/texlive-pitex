@@ -1,11 +1,11 @@
-# revision 19883
+# revision 24731
 # category Package
 # catalog-ctan /macros/plain/contrib/pitex
-# catalog-date 2010-09-08 12:21:11 +0200
+# catalog-date 2011-11-18 01:28:58 +0100
 # catalog-license lppl
 # catalog-version undef
 Name:		texlive-pitex
-Version:	20100908
+Version:	20111118
 Release:	1
 Summary:	Documentation macros
 Group:		Publishing
@@ -17,7 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 The bundle provides macros that the author uses when writing
@@ -27,27 +26,41 @@ documentation, and the macros are subject to change without
 notice.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/plain/pitex/base.ptxlua
+%{_texmfdistdir}/tex/plain/pitex/blocks.ptx
+%{_texmfdistdir}/tex/plain/pitex/files.ptx
 %{_texmfdistdir}/tex/plain/pitex/fonts.ptx
+%{_texmfdistdir}/tex/plain/pitex/fonts.ptxlua
+%{_texmfdistdir}/tex/plain/pitex/inserts.ptx
+%{_texmfdistdir}/tex/plain/pitex/lua.ptx
+%{_texmfdistdir}/tex/plain/pitex/output.ptx
 %{_texmfdistdir}/tex/plain/pitex/pitex.tex
+%{_texmfdistdir}/tex/plain/pitex/references.ptx
 %{_texmfdistdir}/tex/plain/pitex/sections.ptx
+%{_texmfdistdir}/tex/plain/pitex/verbatim.ptx
 %doc %{_texmfdistdir}/doc/plain/pitex/README
+%doc %{_texmfdistdir}/doc/plain/pitex/foundry-settings.lua
+%doc %{_texmfdistdir}/doc/plain/pitex/i-pitex.lua
+%doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.pdf
+%doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.tex
+%doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.txt
 %doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
