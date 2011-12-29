@@ -25,16 +25,8 @@ packages). The tools could be used by anyone, but there is no
 documentation, and the macros are subject to change without
 notice.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -61,7 +53,6 @@ notice.
 %doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.pdf
 %doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.tex
 %doc %{_texmfdistdir}/doc/plain/pitex/pitex-doc.txt
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -72,5 +63,3 @@ notice.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
