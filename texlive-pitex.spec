@@ -63,3 +63,21 @@ notice.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111118-2
++ Revision: 754907
+- Rebuild to reduce used resources
+
+* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111118-1
++ Revision: 739869
+- texlive-pitex
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20100908-1
++ Revision: 719263
+- texlive-pitex
+- texlive-pitex
+- texlive-pitex
+- texlive-pitex
+
