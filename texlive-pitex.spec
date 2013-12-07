@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-pitex
 Version:	20111118
-Release:	2
+Release:	3
 Summary:	Documentation macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/pitex
