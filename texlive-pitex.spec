@@ -1,18 +1,12 @@
-# revision 24731
-# category Package
-# catalog-ctan /macros/plain/contrib/pitex
-# catalog-date 2011-11-18 01:28:58 +0100
-# catalog-license lppl
-# catalog-version undef
 Name:		texlive-pitex
-Version:	20180303
-Release:	2
+Version:	24731
+Release:	1
 Summary:	Documentation macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/pitex
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ documentation, and the macros are subject to change without
 notice.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -56,28 +50,10 @@ notice.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111118-2
-+ Revision: 754907
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111118-1
-+ Revision: 739869
-- texlive-pitex
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20100908-1
-+ Revision: 719263
-- texlive-pitex
-- texlive-pitex
-- texlive-pitex
-- texlive-pitex
-
