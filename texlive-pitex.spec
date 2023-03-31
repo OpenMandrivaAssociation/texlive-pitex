@@ -1,6 +1,6 @@
 Name:		texlive-pitex
 Version:	24731
-Release:	1
+Release:	2
 Summary:	Documentation macros
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/pitex
