@@ -3,7 +3,7 @@ Version:	24731
 Release:	2
 Summary:	Documentation macros
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/plain/contrib/pitex
+URL:		https://www.ctan.org/tex-archive/macros/plain/contrib/pitex
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pitex.doc.r%{version}.tar.xz
